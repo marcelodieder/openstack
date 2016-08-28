@@ -1,0 +1,10 @@
+### Install Openstack Client Centos / Ubuntu ###
+
+#Install EPEL
+rpm -ihv https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum update
+
+#Install Python PIP
+yum install python-pip
+apt-get install python-pip
+
