@@ -1,0 +1,8 @@
+### Packstack RDO Centos 7###
+
+
+$ sudo yum install -y centos-release-openstack-mitaka
+$ sudo yum update -y
+$ sudo yum install -y openstack-packstack
+$ packstack --allinone
+
