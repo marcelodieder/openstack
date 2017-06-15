@@ -1,0 +1,21 @@
+---
+
+- hosts: localhost
+  gather_facts: no
+  vars:
+    objs:
+      - { key1: value1, key2: [ value2, value3] }
+      - { key1: value4, key2: [ value5, value6] }
+  tasks:
+
+    - name: create files
+      file: path="{{ item.key1 }}"  state=directory
+      with_items:
+        objs
+
+    - name: create files
+      file: path="{{ item.0.key1 }}/{{ item.1 }}"  state=touch
+      with_subelements:
+        - objs
+        - key2
+

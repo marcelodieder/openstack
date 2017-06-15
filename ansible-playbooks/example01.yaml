@@ -1,0 +1,27 @@
+--- 
+- hosts: controller compute
+  user: root
+  vars:
+    controller: 192.168.1.201
+    compute01: 192.168.1.202
+    compute02: 192.168.1.203
+ 
+  tasks:
+
+#  - name: add a new string at the end of the file
+#    lineinfile: dest=/etc/hosts
+#                regexp=''
+#                insertafter=EOF
+#                line='192.168.1.201#controller\n192.168.1.202#compute01\n192.168.1.203#compute02'
+#
+  - name: controller
+    lineinfile: dest=/etc/hosts
+      line='{{controller}} controller'
+
+  - name: compute01
+    lineinfile: dest=/etc/hosts
+      line='{{compute01}} compute01'
+
+  - name: compute02
+    lineinfile: dest=/etc/hosts
+      line='{{compute02}} compute02'
