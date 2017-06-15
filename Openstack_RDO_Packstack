@@ -1,0 +1,19 @@
+### Packstack RDO Centos 7###
+
+Install pre-requisites
+
+$ sudo yum install -y centos-release-openstack-mitaka
+$ sudo yum update -y
+$ sudo yum install -y openstack-packstack
+
+Generate first file to packstack
+
+# packstack --gen-answer-file=packstack_all
+
+Open file to put your variables / modules to install OpenStack and change IP address to interface listen
+
+# nano -w packstack_all
+
+Install Packstack
+
+# packstack --answer-file=packstack_all
